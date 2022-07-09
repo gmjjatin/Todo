@@ -1,0 +1,29 @@
+.wrapper {
+  // padding: 0 0.5rem;
+  display: flex;
+  min-height: calc(100% - 193px);
+  overflow: auto;
+  padding: 34px 51px;
+}
+.main {
+  width: calc(100% - 312px);
+}
+.page-header {
+  padding: 30px 51px 0 51px;
+  .title {
+    font-weight: 500;
+    font-size: 24px;
+    letter-spacing: 0.05em;
+    color: #212121;
+  }
+  .filter {
+    font-size: 17px;
+    letter-spacing: 0.05em;
+    color: #3a3a3a;
+    display: flex;
+    float: right;
+    img {
+      margin-right: 10.35px;
+    }
+  }
+}

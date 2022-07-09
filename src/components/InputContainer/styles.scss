@@ -1,0 +1,30 @@
+.input-container {
+  width: 100%;
+  max-width: 300px;
+  padding: 20px;
+
+  .input-content {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 7px;
+    background-color: #ecf3f3;
+    padding: 0.5rem 0;
+
+    button {
+      cursor: pointer;
+      background: none;
+      padding: 0.5rem;
+      border: none;
+      margin: auto;
+      width: 100%;
+      text-align: center;
+      font-size: 14px;
+      color: #329c89;
+      font-weight: 600;
+    }
+
+    &:hover {
+      background-color: #ddd;
+    }
+  }
+}

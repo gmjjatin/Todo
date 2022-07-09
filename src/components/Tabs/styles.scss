@@ -1,0 +1,22 @@
+.tabs {
+  display: flex;
+  margin-bottom: 48px;
+  .tab {
+    margin-right: 24px;
+    font-size: 26px;
+    color: rgba(26, 59, 88, 0.33);
+    transition: color 0.5s ease;
+    cursor: pointer;
+  }
+  .active {
+    color: #1a3b58;
+    &::after {
+      content: " ";
+      width: 17px;
+      border-radius: 8px;
+      display: block;
+      height: 4px;
+      background-color: #1a3b58;
+    }
+  }
+}

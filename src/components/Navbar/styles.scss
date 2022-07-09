@@ -1,0 +1,39 @@
+.navbar {
+  padding: 51px;
+  display: flex;
+  position: relative;
+}
+.search {
+  display: flex;
+  align-items: center;
+  input {
+    border: none;
+    margin-top: 5px;
+    margin-left: 13px;
+    &::placeholder {
+      font-size: 17px;
+
+      letter-spacing: 0.05em;
+
+      color: #9a9a9a;
+    }
+  }
+}
+.members {
+  position: absolute;
+  left: 40%;
+}
+.profile {
+  display: flex;
+  align-items: center;
+  font-size: 17px;
+  letter-spacing: 0.05em;
+  color: #3a3a3a;
+  position: absolute;
+  right: 51px;
+  top: 42px;
+  img {
+    width: 45px;
+    margin-left: 21px;
+  }
+}

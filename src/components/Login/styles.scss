@@ -1,0 +1,52 @@
+.form {
+  margin: 0 auto;
+  padding-top: 37px;
+  border-top: 2px solid rgba(64, 145, 223, 0.12);
+  width: 314px;
+}
+.helper,
+.sub-helper {
+  display: block;
+}
+.helper {
+  font-weight: 500;
+  font-size: 21px;
+  color: #1a3b58;
+}
+.sub-helper {
+  font-size: 10px;
+  line-height: 15px;
+  color: #999999;
+  margin-bottom: 34px;
+}
+.input {
+  width: 314px;
+  height: 45px;
+  border: 1px solid #cbdbea;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 34px;
+  &::placeholder {
+    color: #b7c0c9;
+    font-size: 14px;
+  }
+}
+
+.button {
+  width: 100%;
+  height: 45px;
+  border: none;
+  background: #329c89;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 16px;
+  color: #ffffff;
+  cursor: pointer;
+  &:hover {
+    opacity: 0.8;
+  }
+}
+label[for="remember"] {
+  font-size: 10px;
+  color: rgba(26, 59, 88, 0.61);
+}

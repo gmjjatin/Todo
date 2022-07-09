@@ -1,0 +1,48 @@
+.sidebar {
+  width: 310px;
+  border-right: 1.5px solid #f0f0f0;
+  padding: 51px;
+  height: 100%;
+  .title {
+    font-weight: 500;
+    font-size: 20px;
+    letter-spacing: 0.03em;
+    color: #161616;
+  }
+}
+.vertical-tabs {
+  margin-top: 84px;
+  .tab {
+    margin-bottom: 39px;
+    img {
+      margin-right: 28px;
+    }
+  }
+  .text {
+    display: flex;
+    align-items: center;
+    font-weight: 400;
+    font-size: 17px;
+    letter-spacing: 0.05em;
+    color: #9a9a9a;
+  }
+  .active {
+    color: #212121;
+    position: relative;
+    font-weight: 500;
+
+    &::after {
+      position: absolute;
+      right: -52px;
+      content: " ";
+      height: 35px;
+      width: 4px;
+      background-color: #329c89;
+      border-radius: 8px;
+    }
+  }
+}
+.bottom {
+  position: absolute;
+  bottom: 0;
+}
