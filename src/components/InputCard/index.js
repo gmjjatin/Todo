@@ -36,7 +36,7 @@ export default function InputCard({ setOpen, listId, type }) {
       </div>
       <div className="confirm">
         <button className="button-confirm" onClick={handleBtnConfirm}>
-          {type === "card" ? "Add Card" : "Add List"}
+          {type === "card" ? "Add Todo" : "Add List"}
         </button>
         <button
           className="button-cancel"
