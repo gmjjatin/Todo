@@ -8,56 +8,41 @@ import Settingicon from "../../assets/icons/setting.png";
 import Logouticon from "../../assets/icons/logout.png";
 
 import "./styles.scss";
+const sideTabs = [
+  { name: "Overview", icon: Homeicon },
+  { name: "Stats", icon: Statsicon },
+  { name: "Projects", icon: Projectsicon },
+  { name: "Chat", icon: Chaticon },
+  { name: "Calendar", icon: Calendaricon },
+];
 
-export default function Sidebar() {
+const sideOptions = [
+  { name: "Setting", icon: Settingicon },
+  { name: "Log Out", icon: Logouticon },
+];
+export default function Sidebar({ title, setTitle }) {
   return (
     <div className="sidebar">
       <span className="title">.taskez</span>
       <div className="vertical-tabs">
-        <div className="tab">
-          <span className="text">
-            <img src={Homeicon} alt="" />
-            Overview
-          </span>
-        </div>
-        <div className="tab">
-          <span className="text">
-            <img src={Statsicon} alt="" />
-            Stats
-          </span>
-        </div>
-        <div className="tab">
-          <span className="text active">
-            <img src={Projectsicon} alt="" />
-            Projects
-          </span>
-        </div>
-        <div className="tab">
-          <span className="text">
-            <img src={Chaticon} alt="" />
-            Chat
-          </span>
-        </div>
-        <div className="tab">
-          <span className="text">
-            <img src={Calendaricon} alt="" />
-            Calendar
-          </span>
-        </div>
+        {sideTabs.map((data) => (
+          <div className="tab" onClick={() => setTitle(data.name)}>
+            <span className={`text ${title === data.name ? "active" : ""}`}>
+              <img src={data.icon} alt="" />
+              {data.name}
+            </span>
+          </div>
+        ))}
       </div>
       <div className="vertical-tabs bottom">
-        <div className="tab">
-          <span className="text">
-            <img src={Settingicon} alt="" />
-            Setting
-          </span>
-        </div>
-        <div className="tab">
-          <span className="text">
-            <img src={Logouticon} alt="" />
-            Log Out
-          </span>
-        </div>
+        {sideOptions.map((data) => (
+          <div className="tab">
+            <span className="text">
+              <img src={data.icon} alt="" />
+              {data.name}
+            </span>
+          </div>
+        ))}
       </div>
     </div>
   );

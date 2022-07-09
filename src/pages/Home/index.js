@@ -23,9 +23,11 @@ const initialState = () => {
     return store;
   }
 };
+const initialTitle = "Projects";
 
 export default function Home() {
   const [data, setData] = useState(initialState);
+  const [title, setTitle] = useState(initialTitle);
 
   const addMoreCard = (title, listId) => {
     if (!title) {
@@ -206,37 +208,41 @@ export default function Home() {
         deleteList,
       }}
     >
-      <Sidebar />
+      <Sidebar title={title} setTitle={setTitle} />
       <div className="main">
         <Navbar />
         <div className="page-header">
-          <span className="title">Projects</span>
-          <span class="filter">
-            <img src={Filtericon} alt="" />
-            Filter
-          </span>
+          <span className="title">{title}</span>
+          {title === initialTitle ? (
+            <span class="filter">
+              <img src={Filtericon} alt="" />
+              Filter
+            </span>
+          ) : null}
         </div>
-        <DragDropContext onDragEnd={onDragEnd}>
-          <Droppable droppableId="app" type="list" direction="horizontal">
-            {(provided) => (
-              <div
-                className="wrapper"
-                ref={provided.innerRef}
-                {...provided.droppableProps}
-              >
-                {data.listIds.map((listId, index) => {
-                  const list = data.lists[listId];
+        {title === initialTitle ? (
+          <DragDropContext onDragEnd={onDragEnd}>
+            <Droppable droppableId="app" type="list" direction="horizontal">
+              {(provided) => (
+                <div
+                  className="wrapper"
+                  ref={provided.innerRef}
+                  {...provided.droppableProps}
+                >
+                  {data.listIds.map((listId, index) => {
+                    const list = data.lists[listId];
 
-                  return <List list={list} key={listId} index={index} />;
-                })}
-                <div>
-                  <InputContainer type="list" />
+                    return <List list={list} key={listId} index={index} />;
+                  })}
+                  <div>
+                    <InputContainer type="list" />
+                  </div>
+                  {provided.placeholder}
                 </div>
-                {provided.placeholder}
-              </div>
-            )}
-          </Droppable>
-        </DragDropContext>
+              )}
+            </Droppable>
+          </DragDropContext>
+        ) : null}
       </div>
     </StoreApi.Provider>
   );
